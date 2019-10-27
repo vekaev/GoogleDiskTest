@@ -1,0 +1,310 @@
+$color-border:#DFE0E4;
+$color-icon:#E57300;
+$color-analitis:#4e4d5c;
+$color-leftbartext:#73737F;
+$color-btn-background:#FEF6E3;
+$color-leftbar-text:#E37400;
+$color-main:#F9FAFC;
+html {
+    font-family: Tahoma;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    background: #ffffff;
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    ul,
+    li,
+    a,
+    span,
+    div,
+    p {
+        margin: 0;
+        padding: 0;
+        font-size: 14px;
+        font-family: "Tahoma";
+        list-style: none;
+        text-decoration: none;
+        font-weight: normal;
+    }
+}
+
+body {
+    // How to change it?not-flex
+    display: flex;
+    max-height: 100vh;
+    //Its not correct,but how i should change it
+}
+
+main {
+    background: $color-main;
+    width: 100%;
+    border: 2px solid $color-border;
+    border-left: 0px;
+    max-height: 98vh;
+    .content {
+        padding: 0 20px;
+    }
+    //Can not make full screen 
+    .block-body {
+        .content {
+            display: grid;
+            .grid-block {
+                display: grid;
+                grid-template-areas: "a a a a  b b  c c" "d d d e e e f f";
+                grid-template-rows: repeat( 2, 250px);
+                grid-gap: 10px;
+                .main-block {
+                    background: yellow;
+                }
+                .graphics {
+                    grid-area: a;
+                }
+                .using-per-day {
+                    grid-area: b;
+                }
+                .active-users-scale {
+                    grid-area: c;
+                }
+                .user-retention {
+                    grid-area: d;
+                }
+                .active-users-graphic {
+                    grid-area: e;
+                }
+                .user-circle {
+                    grid-area: f;
+                }
+            }
+            .block-title {
+                display: inline-block;
+                color: $color-analitis;
+                margin: 5px 0;
+            }
+        }
+    }
+    .header {
+        .content {
+            color: $color-leftbartext;
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 2px solid $color-border;
+            height: 46px;
+            align-items: center;
+            .search-header-part {
+                cursor: pointer;
+                max-width: 200px;
+                .icon-search {
+                    display: inline-block;
+                }
+            }
+            .search-header-part:hover {
+                color: #E37400;
+            }
+            .main-header-part {
+                .main-upper-part {
+                    .account-name {
+                        display: inline-block;
+                    }
+                    .account-name::After {
+                        content: " > ";
+                    }
+                    .project-name {
+                        display: inline-block;
+                    }
+                }
+                .main-down-part {
+                    .data-location {
+                        cursor: pointer;
+                    }
+                    .data-location:hover {
+                        color: $color-leftbar-text;
+                    }
+                    .data-location::after {
+                        content: "▼";
+                        margin-left: 5px;
+                    }
+                }
+            }
+            .link-header-part {
+                .icon-link {
+                    margin: 0 2px;
+                    display: inline-block;
+                }
+                .icon-link:hover {
+                    color: #E37400;
+                }
+                .icon-main-link {
+                    position: relative;
+                    bottom: 3px;
+                    text-align: center;
+                    color: #E37400;
+                    background: #fff;
+                    border-radius: 50%;
+                    border: 1px solid rgb(246, 242, 242);
+                    width: 25px;
+                    height: 25px;
+                    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+                    .fa-search {
+                        position: relative;
+                        top: 3px;
+                    }
+                }
+                .icon-main-link:hover {
+                    color: #4e4d5c;
+                    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+                }
+            }
+        }
+    }
+}
+
+aside {
+    // I dont why fuccking margin below 
+    .article {
+        width: 195px;
+        display: flex;
+        flex-direction: column;
+        .leftbar-header {
+            padding: 12px 16px;
+            // width: 100%;
+            max-height: 45px;
+            display: flex;
+            flex-direction: row;
+            border: 2px solid $color-border;
+            align-items: center;
+            .logo-name {
+                flex-grow: 10;
+                display: flex;
+                flex-direction: row;
+                cursor: pointer;
+                .leftbar-icon {
+                    font-size: 18px;
+                    color: $color-icon;
+                }
+                .webname {
+                    font-size: 18px;
+                    margin-left: 10px;
+                    color: $color-analitis;
+                }
+            }
+            .leftbar-settings {
+                text-align: center;
+                width: 10px;
+                font-size: 18px;
+                color: $color-leftbartext;
+                flex-grow: 0;
+                cursor: pointer;
+            }
+            .leftbar-settings:hover {
+                color: $color-leftbar-text;
+            }
+        }
+        .leftbar-body {
+            min-height: 90vh;
+            display: flex;
+            flex-direction: column;
+            border: 2px solid $color-border;
+            border-top-width: 0px;
+            margin-bottom: 72px;
+            .general-part {
+                display: flex;
+                flex-direction: column;
+                flex-grow: 10;
+                .generalpart-name-header {
+                    margin-left: 24px;
+                    margin-top: 8px;
+                    color: #D4D4D7;
+                    font-size: 13px;
+                    // text-decoration:
+                }
+                .left-general-link-name-reports::after {
+                    content: "▼";
+                    font-size: 10px;
+                    position: absolute;
+                    right: 18px;
+                    top: 12px;
+                }
+                // .left-general-link-name:hover::after {}
+            }
+            .footer-part {
+                flex-grow: 0;
+                display: flex;
+                flex-direction: column;
+                .generalpart-name-header {
+                    margin-left: 24px;
+                    margin-top: 8px;
+                    color: #D4D4D7;
+                    font-size: 13px;
+                    // text-decoration:
+                }
+            }
+            .leftbar-footer {
+                height: 30px;
+                border-top: 2px solid $color-border;
+                display: flex;
+                justify-content: flex-end;
+                align-items: center;
+                .bottom-back {
+                    display: inline-block;
+                    margin-right: 10px;
+                    color: $color-leftbartext;
+                    cursor: pointer;
+                }
+            }
+            .bottom-back:hover {
+                color: $color-leftbar-text;
+            }
+        }
+        .leftbar-general-link {
+            cursor: pointer;
+            position: relative;
+            display: flex;
+            align-items: center;
+            float: left;
+            // display: block;
+            height: 35px;
+            justify-content: flex-start;
+            width: 95%;
+            border-top-right-radius: 20px;
+            border-bottom-right-radius: 20px;
+            .left-stick {
+                margin-right: 20px;
+                width: 4px;
+                background: $color-leftbar-text;
+                border-top-right-radius: 12px;
+                border-bottom-right-radius: 12px;
+                float: left;
+                height: 80%;
+                opacity: 0;
+            }
+            .leftbar-link-icon {
+                text-align: center;
+                width: 15px;
+                color: $color-leftbartext;
+            }
+            .left-general-link-name {
+                margin-left: 10px;
+                color: $color-leftbartext;
+            }
+            // .footer-leftbar-general-link {}
+        }
+        .leftbar-general-link:hover {
+            background: $color-btn-background;
+            color: $color-leftbar-text;
+        }
+        .leftbar-general-link:hover>a {
+            color: $color-leftbar-text;
+        }
+        .leftbar-general-link:hover .leftbar-link-icon {
+            color: $color-leftbar-text;
+        }
+        .leftbar-general-link:hover .left-stick {
+            opacity: 1;
+        }
+    }
+}
